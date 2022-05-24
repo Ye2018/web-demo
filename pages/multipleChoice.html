@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" id="module01">
+<head lang="en">
+<!--<link href="../css/stylesheet.css" type="text/css" rel="stylesheet" /> -->
+	
+	<link href="../css/colours.css" type="text/css" rel="stylesheet" />
+	<link href="../css/stylesheet_2018-09.css" type="text/css" rel="stylesheet" />
+	<link href="../css/nextPreviousButton.css" type="text/css" rel="stylesheet" />
+	<link href="../css/multichoice.css" type="text/css" rel="stylesheet" />
+	<!--<link href="../css/spoiler.css" type="text/css" rel="stylesheet" />
+	<link href="../css/newSpoiler.css" type="text/css" rel="stylesheet" />-->
+	
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+<title>IDEA_01_13</title>
+</head>
+<body>
+	<center>
+		<a href="IdeCen_01_12.html" class="previous">&laquo; Previous</a>
+		<a href="IdeCen_01_15.html" class="next">&raquo; Next</a>
+	</center>
+	<header>
+		<h1>Practice: SMART Objectives</h1>
+		<p class="module">Module 1: Awareness and Orientation</p>
+	</header>
+	
+	<main>
+
+
+
+<!-- add new content here -->
+	<section class="text">
+	
+		<p>
+			See how well you understand SMART objectives by answering the following <strong>five</strong> questions.
+		</p>
+		
+	</section>
+	<section class="multi-choice">
+		<div class="flex-row">
+			<div class="question-container">
+				<div id="question1" class="question">
+					<p>
+						Which objective is required to meet which goal? Choose the best answer.
+					</p>
+					<p>
+						Drag each objective to the appropriate goal.
+					</p>
+				</div>
+				<div id="question2" class="question is-hidden">
+					<p>
+						Is the following a SMART objective?
+					</p>
+					<p>
+						Students will know how to create a marketing pitch.
+					</p>
+				</div>
+				<div id="question3" class="question is-hidden">
+					<p>
+						Is the following a SMART objective?
+					</p>
+					<p>
+						You will format to given specifications a document using columns, tables and section breaks and submit to the office by the end of the week
+					</p>
+				</div>
+				<div id="question4" class="question is-hidden">
+					<p>
+						Is the following a SMART objective?
+					</p>
+					<p>
+						You will learn how to build a bird feeder to be ready in the Spring.
+					</p>
+				</div>
+				<div id="question5" class="question is-hidden">
+					<p>
+						Is the following a SMART objective?
+					</p>
+					<p>
+						Managers will increase productivity of their respective divisions by fiscal end.
+					</p>
+				</div>
+				<div id="question6" class="question is-hidden">
+					<p>
+						Is the following a SMART objective?
+					</p>
+					<p>
+						Sales staff will increase the number of customer contacts by 5% within a two-month period.
+					</p>
+				</div>
+			</div>
+			<div class="interactive flex-col">
+				<div class="choices-container">
+					<!-- Drag and drop -->
+					<div id="choices1" class="drag-drop" data-attempts="2">
+						<div id="drag-group1" class="drag-group flex-col">
+							<a id="drag1-1" class="button-drag" ondragstart="dragstart_handler(event);" draggable="true">Identify the locations where inventory mismanagement decreased sales (given the reports).</a>
+							<a id="drag1-2" class="button-drag" ondragstart="dragstart_handler(event);" draggable="true">Identify the period where exchange rates went through the greatest fluctuations (given a graph).</a>
+							<a id="drag1-3" class="button-drag" ondragstart="dragstart_handler(event);" draggable="true">Label descriptions of hazardous materials as belonging to Class 1, 11 or 111 with 100% accuracy</a> 
+							<a id="drag1-4" class="button-drag" ondragstart="dragstart_handler(event);" draggable="true">Practice daily the technical requirements for Grade 10 guitar until your exam.</a> 
+						</div>
+						<div id="drop-group1" class="drop-group flex-col">
+							<div class="button-drop single">
+								<p>Analyze business reports </p>
+								<div id="drop1-1" class="drop-zone" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div>
+							</div>
+							<div class="button-drop single">
+								<p>Interpret graphs indicating foreign currency exchange rates. </p>
+								<div id="drop1-2" class="drop-zone" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div>
+							</div>
+							<div class="button-drop single">
+								<p>Classify hazardous materials according to WHMIS standards. </p>
+								<div id="drop1-3" class="drop-zone" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div>
+							</div>
+							<div class="button-drop single">
+								<p>Teach guitar </p>
+								<div id="drop1-4" class="drop-zone" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div>
+							</div>
+						</div>
+					</div>
+					<div id="choices2" class="multi-select flex-col is-hidden">
+						<a id="btn2-1" class="button-text">Yes</a>
+						<a id="btn2-2" class="button-text">No</a>
+					</div>
+					<div id="choices3" class="multi-select flex-col is-hidden">
+						<a id="btn3-1" class="button-text">Yes</a>
+						<a id="btn3-2" class="button-text">No</a>
+					</div>
+					<div id="choices4" class="multi-select flex-col is-hidden">
+						<a id="btn4-1" class="button-text">Yes</a>
+						<a id="btn4-2" class="button-text">No</a>
+					</div>
+					<div id="choices5" class="multi-select flex-col is-hidden">
+						<a id="btn5-1" class="button-text">Yes</a>
+						<a id="btn5-2" class="button-text">No</a>
+					</div>
+					<div id="choices6" class="multi-select flex-col is-hidden">
+						<a id="btn6-1" class="button-text">Yes</a>
+						<a id="btn6-2" class="button-text">No</a>
+					</div>
+				</div>
+				<div class="feedback-container is-hidden">
+					<div id="false1" class="feedback is-hidden">
+						<p>Sorry, that’s not right. Here’s the goals that align to each objective.</p>
+					</div>
+					<div id="true1" class="feedback is-hidden">
+						<p>Way to go! You’ve matched each objective to the right goal.</p>
+					</div>
+					<div id="false2" class="feedback is-hidden">
+						<p>Sorry, that’s not right. This is NOT a SMART objective. The verb “know” is not observable – you can’t see what someone knows! It has to be demonstrated by some type of observable action. The objective also has no time limit.</p>
+					</div>
+					<div id="true2" class="feedback is-hidden">
+						<p>That’s right!  This is NOT a SMART objective. The verb “know” is not observable – you can’t see what someone knows! It has to be demonstrated by some type of observable action. It also has no time limit</p>
+					</div>
+					<div id="false3" class="feedback is-hidden">
+						<p>Sorry, that’s not right. This is a SMART objective. This objective is observable, is time-bound and tells you what needs to be done (with the condition that you will be given the specifications).</p>
+					</div>
+					<div id="true3" class="feedback is-hidden">
+						<p>That’s right!  This is a SMART objective. This objective is observable, has a time criteria and tells you what needs to be done (with the condition that you will be given the specifications).</p>
+					</div>
+					<div id="false4" class="feedback is-hidden">
+						<p>Sorry, that’s not right.  This is NOT a SMART objective. The verb “learn” is not observable – you can’t see what someone learns! The objective has to be demonstrated by some type of observable action – if “describe” was used, that would be observable. The objective does have a time limit, but it is a little general. </p>
+					</div>
+					<div id="true4" class="feedback is-hidden">
+						<p>That’s right!  This is NOT a SMART objective. The verb “learn” is not observable – you can’t see what someone learns! It has to be demonstrated by some type of observable action. It also has no time limit</p>
+					</div>
+					<div id="false5" class="feedback is-hidden">
+						<p>Sorry, that’s not right.  This is NOT a SMART objective because it is not specific enough. It would have been much better to quantify the increase by using a percentage or dollar value. </p>
+					</div>
+					<div id="true5" class="feedback is-hidden">
+						<p>That’s right!  This is NOT a SMART objective because it is not specific enough. It would have been much better to quantify the increase by using a percentage or dollar value. </p>
+					</div>
+					<div id="false6" class="feedback is-hidden">
+						<p>Sorry, that’s not right. This is a SMART objective because it meets all of the criteria.</p>
+					</div>
+					<div id="true6" class="feedback is-hidden">
+						<p>That’s right!  This is a SMART objective because it meets all of the criteria.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="nav">
+			<div id="previous" class="is-disabled"></div>
+			<div class="progress-container tracking free-nav"></div>
+			<!-- Add 'tracking' class to track user's first choice in progress bar -->
+			<!-- Add 'free-nav' class to allow user to skip ahead to any question -->
+			<div id="next" class="is-disabled"></div>
+			<div id="restart" class="is-disabled"></div>
+		</div>
+		
+	</section>
+
+	</main>
+	<script type="text/javascript" src="../js/multichoice.js"></script>
+
+<!-- end new content -->
+<!-- RSPEAK_STOP -->
+	<footer>
+		<p class="copyright">&copy; New Brunswick Department of Education and Early Childhood Development. All Rights Reserved.</p>
+	</footer>
+<!-- RSPEAK_START-->
+</body>
+</html>
