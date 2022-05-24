@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* SPOILER BOX */
+
+.spoiler {
+	max-height: 0;
+	overflow: hidden;
+	margin: 0 0 0.5rem;
+	transition: max-height 0.3s ease-out;
+	position: relative;
+}
+
+.spoiler div {
+	padding: 1.5rem;
+	background-color: var(--sylvite);
+}
+
+.spoiler div > *:first-child {
+	margin-top: 0;
+}
+
+.spoiler div > *:last-child {
+	margin-bottom: 0;
+}
+
+a.spoiler-button {
+	font-weight: 700;
+	line-height: 1;
+	color: white;
+	display: block;
+	position: relative;
+	background-color: var(--ferrite);
+	margin-top: 0.5rem;
+	padding: 0.75rem;
+	width: 100%;
+	border-right: 45px solid var(--accent);
+}
+
+a.spoiler-button:hover {
+	background-color: var(--tungsten);
+}
+
+a.spoiler-button.is-active {
+	background-color: var(--tungsten);
+}
+
+a.spoiler-button::before, 
+a.spoiler-button::after {
+	/* Creates the line of the (+) or (-) */
+	content: "";
+	display: block;
+	height: 25px;
+	width: 3px;
+	background: white;
+	position: absolute;
+	right: -24px;
+	top: 10px;
+	transition: transform 0.3s ease-out;
+	z-index: 1;
+}
+
+a.spoiler-button::before {
+	transform: rotate(90deg);	
+}
+
+a.spoiler-button.is-active::after {
+	transform: rotate(-90deg);
+}
+
+a.spoiler-button:hover::before,
+a.spoiler-button:hover::after {
+	height: 27px;
+	top: 9px;
+}
+
+*:not(.spoiler) + a.spoiler-button {
+	margin-top: 1.5rem;
+}
+
+.spoiler + *:not(.spoiler-button) {
+	margin-top: 1.5rem;}

@@ -1,0 +1,124 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* LIGHTBOX - IMAGE POP-UP */
+
+.lightbox {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	background: rgba(var(--ferriteRGB), 0.95);
+	opacity: 0;
+	transition: opacity 0.2s ease-out;
+	overflow: hidden;
+	z-index: 101;
+}
+
+.lightbox img {
+	max-width: 0%;
+	max-height: 0%;
+	margin: auto;
+	position: absolute;
+	top: 100px;
+	right: 0;
+	left: 0;
+	box-shadow: 0 0 4.0rem rgba(0, 0, 0, 0.3);
+	transition: 0.3s ease-out;
+}
+
+.lightbox p {
+	position: absolute;
+	top: -80px;
+	right: 0;	
+	left: 0;
+	line-height: 50px;
+	color: white;
+	text-align: center;
+	background-color: var(--carbon);	
+	z-index: -1;
+	transition: 0.3s ease-out;
+}
+
+.lightbox-target {
+	position: relative;
+}
+
+a.lightbox-open, 
+a.lightbox-close {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background: var(--accent);
+	opacity: 0.9;
+	text-decoration: none;
+	position: absolute;
+	transition: 0.3s ease-out;
+}
+
+a.lightbox-open {
+	top: 0;
+	left: 0;
+}
+
+a.lightbox-close {
+	top: -80px;
+	right: 0;
+}
+
+a.lightbox-open:before, 
+a.lightbox-open:after, 
+a.lightbox-close:before, 
+a.lightbox-close:after {
+	/* Creates the line of the (X) or (+) */
+	content: "";
+	display: block;
+	height: 30px;
+	width: 3px;
+	background: white;
+	position: absolute;
+	left: 24px;
+	top: 10px;
+}
+
+a.lightbox-close:before {
+	transform: rotate(45deg);
+}
+
+a.lightbox-open:after {
+	transform: rotate(-90deg);
+}
+
+a.lightbox-close:after {
+	transform: rotate(-45deg);
+}
+
+a.lightbox-open:hover, 
+a.lightbox-close:hover {
+	opacity: 1;
+}
+
+a.lightbox-open:hover:after, 
+a.lightbox-open:hover:before, 
+a.lightbox-close:hover:after, 
+a.lightbox-close:hover:before {
+	width: 3px;
+	height: 32px;
+	top: 9px;
+}
+
+.lightbox:target {
+	opacity: 1;
+	bottom: 0;
+}
+
+.lightbox:target img {
+	max-width: 100%;
+	max-height: calc(100% - 100px);
+}
+
+.lightbox:target a.lightbox-close, 
+.lightbox:target p {
+	top: 0px;
+}

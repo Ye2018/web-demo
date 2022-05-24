@@ -1,0 +1,1110 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*----------------------------------------*/
+/*-------------- VARIABLES ---------------*/
+/*----------------------------------------*/
+
+:root {
+    --maxViewportWidth: 1170px;
+	--contentWidth: 900px;
+}
+
+@media only screen 
+	and (max-width: 1024px) {
+		:root {
+			--padding: 2rem;
+		}
+}
+	
+@media only screen 
+	and (min-width: 1025px) {
+		:root {
+			--padding: 3rem;
+		}
+}
+
+
+
+
+/*----------------------------------------*/
+/*--------- UNIVERSAL BOX-SIZING ---------*/
+/*----------------------------------------*/
+
+
+html {
+	box-sizing: border-box;
+}
+
+*, 
+*:before, 
+*:after {
+	box-sizing: inherit;
+}
+
+
+
+
+/*----------------------------------------*/
+/*------------- READ SPEAKER -------------*/
+/*----------------------------------------*/
+
+
+#readspeaker_button1,
+#readspeaker_placeholder {
+	margin-left: var(--padding);
+}
+
+body.teacher #readspeaker_button1,
+body.teacher #readspeaker_placeholder,
+body.secondary #readspeaker_button1,
+body.secondary #readspeaker_placeholder {
+	margin: 0;
+}
+
+
+
+
+/*----------------------------------------*/
+/*------------- HTML & BODY --------------*/
+/*----------------------------------------*/
+
+
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0 calc((var(--maxViewportWidth) - var(--contentWidth) - (var(--padding)*2)) / 2);
+	height: 100%;
+}
+
+
+
+
+/*----------------------------------------*/
+/*-------------- TYPOGRAPHY --------------*/
+/*----------------------------------------*/
+
+
+html {
+	font-family: 'Lato', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	color: var(--ferrite);
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+h1 {
+	font-size: 2rem;
+	font-weight: 900;
+	line-height: 1;
+	margin: 0 0 0.75rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	font-weight: 900;
+	line-height: 1;
+	color: var(--ferrite);
+	margin: 1.5rem 0;
+}
+
+h3 {
+	font-size: 1rem;
+	font-weight: 900;
+	line-height: 1.2;
+	color: var(--ferrite);
+	margin: 1.5rem 0 1rem;
+}
+
+p {
+	font-size: 1.0rem;
+	margin: 0 0 1.0rem;
+}
+
+p.caption {
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.025rem;
+	color: var(--tungsten);
+	text-align: center;
+	margin: 0.5rem 0 0;
+	clear: both;
+}
+
+p.copyright {	
+	font-size: 0.75rem;
+	color: var(--corundum);
+	margin: 0;
+	clear: both;
+}
+
+p.module {
+	font-size: 0.75rem;
+	letter-spacing: 0.2rem;
+	text-transform: uppercase;
+	color: var(--tungsten);
+	margin: 0;
+}
+
+ul, 
+ol {
+	margin: 0 0 1.0rem;
+	padding-left: 2.0rem;
+}
+
+ul > ul,
+ul > ol,
+ol > ol,
+ol > ul {
+	margin: 0;
+}
+
+li > ul,
+li > ol {
+	margin: 0.5rem 0 0;
+}
+
+ol > ul {
+	list-style-type: disc;
+}
+
+ol > ol {
+	list-style-type: lower-latin;
+}
+
+ol.roman {
+	list-style-type: upper-roman;
+}
+
+ol.roman ol {
+	list-style-type: lower-roman;
+}
+
+ol > li,
+ol > p {
+	padding-left: 0.25rem;
+}
+
+li,
+ul p,
+ol p {
+	margin: 0 0 0.5rem;
+}
+
+strong {
+	font-weight: 900;
+}
+
+em {
+	padding-right: 2px;
+}
+
+
+
+
+/*----------------------------------------*/
+/*-------------- MAX-WIDTH ---------------*/
+/*----------------------------------------*/
+
+
+header, 
+main, 
+footer {
+	max-width: calc(var(--contentWidth) + (var(--padding) * 2));
+	margin: 0 auto;
+}
+
+main {
+	display: block; /* IE 11 compatibility */
+	padding: 0 var(--padding);
+}
+
+
+
+
+/*----------------------------------------*/
+/*--------------- SECONDARY --------------*/
+/*----------------------------------------*/
+
+
+body.secondary {
+	background-color: var(--gypsum);
+	padding: 1rem;
+}
+
+body.secondary header,
+body.secondary main,
+body.secondary footer {
+	background-color: white;
+}
+
+body.secondary header {
+	margin-top: 1rem;
+	padding-top: var(--padding);
+	position: relative;
+}
+
+a.secondary-close {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background: transparent;
+	opacity: 0.9;
+	text-decoration: none;
+	position: absolute;
+	transition: 0.3s ease-out;
+	top: 1.5rem;
+	right: 1.5rem;
+}
+
+a.secondary-close::before,
+a.secondary-close::after {
+	content: "";
+	display: block;
+	height: 30px;
+	width: 3px;
+	background: var(--accent);
+	position: absolute;
+	right: 24px;
+	top: 10px;
+}
+
+a.secondary-close::before {
+	transform: rotate(45deg);
+}
+
+a.secondary-close::after {
+	transform: rotate(-45deg);
+}
+
+a.secondary-close:hover:before, 
+a.secondary-close:hover:after {
+	width: 3px;
+	height: 32px;
+	top: 9px;
+}
+
+body.secondary footer {
+	margin-bottom: 3rem;
+}
+
+
+
+
+/*----------------------------------------*/
+/*------------ TEACHER'S GUIDE -----------*/
+/*----------------------------------------*/
+
+
+body.teacher {
+	background-color: var(--accentLight);
+	padding-top: 1rem;
+}
+
+body.teacher header, 
+body.teacher main,
+body.teacher footer {
+	background-color: white;
+}
+
+body.teacher header {
+	margin-top: 1rem;
+	padding-top: 0;
+}
+
+body.teacher header::before {
+	content: "Teachers Only";
+	display: block;
+	font-size: 1.25rem;
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: 0.5rem;
+	color: white;
+	text-transform: uppercase;
+	width: calc(100% + (var(--padding) * 2));
+	margin: 0 calc(var(--padding) * -1) var(--padding);
+	padding: 1.5rem var(--padding);
+	background-color: var(--accent);
+}
+
+body.teacher footer {
+	margin-bottom: 3rem;
+}
+
+
+
+
+/*----------------------------------------*/
+/*---------------- HEADER ----------------*/
+/*----------------------------------------*/
+
+
+header {
+	padding: 1rem var(--padding) 2rem;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+
+
+
+
+/*----------------------------------------*/
+/*--------------- SECTIONS ---------------*/
+/*----------------------------------------*/
+
+
+section::after {
+	/* Clearfix */
+	content: "";
+	display: table;
+	clear: both;
+}
+
+section.text {
+	margin: 0 auto;
+	padding: 3rem 0 0;
+}
+
+section.text + section.col-split,
+section.col-split + section.text,
+section.col-split + section.col-split {
+	padding-top: 1.5rem;
+}
+
+section.media {
+	margin: 0 auto;
+	padding: 3rem 0 0;
+}
+
+section:first-child {
+	padding-top: 0 !important;
+}
+
+section > *:first-child {
+	margin-top: 0 !important;
+}
+
+section > *:last-child {
+	margin-bottom: 0 !important;
+}
+
+
+/* TEXT FLOW COLUMNS */
+
+div.col-flow {
+	margin: 0 0 1rem;
+	column-gap: 1.5rem;
+}
+
+div.col-flow.x2 {
+	columns: 2 18rem;
+}
+
+div.col-flow.x3 {
+	columns: 3 12rem;
+}
+
+div.col-flow li {
+	page-break-inside: avoid;
+         break-inside: avoid;
+}
+
+
+/* SECTION - SPLIT COLUMNS */
+
+section.col-split {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	max-width: 100%;
+	padding: 3rem 0 0;
+}
+
+section.col-split img {
+	margin-bottom: 1rem;
+}
+
+section.col-split.x2 div {
+	flex-grow: 1;
+	max-width: calc(50% - (1.5rem / 2));
+}
+
+section.col-split.x2 div:first-child {
+	margin-right: 1.5rem;
+}
+
+section.col-split.x3 div {
+	flex-grow: 1;
+	max-width: calc((100% / 3) - (3rem / 3));
+}
+
+section.col-split.x3 div:nth-child(-n+2) {
+	margin-right: 1.5rem;
+}
+
+
+/* SECTION - MEDIA GRID 2X / 3X */
+
+section.media-grid {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding: 3rem 0 0;
+}
+
+section.media-grid.x2 > * {
+	flex-grow: 1;
+	max-width: calc(50% - (1rem / 2));
+}
+
+section.media-grid.x2 > *:nth-child(2n) {
+	margin-left: 1rem;
+	margin-bottom: 1rem;
+}
+
+section.media-grid.x2 > *:last-child {
+	margin-bottom: 0;
+}
+
+section.media-grid.x3 > * {
+	flex-grow: 1;
+	max-width: calc((100% / 3) - (2rem / 3));
+}
+
+section.media-grid.x3 > *:nth-child(3n+1) {
+	margin-bottom: 1rem;
+}
+
+section.media-grid.x3 > *:not(:nth-child(3n+1)) {
+	margin-left: 1rem;
+}
+
+section.media-grid.x3 > *:nth-last-child(-n+3) {
+	margin-bottom: 0;
+}
+
+
+/* SECTION - MEDIA GRID INTERACTIVE */
+
+section.media-grid a,
+section.media-grid div {
+	justify-content: center;
+	position: relative;
+	background-color: var(--carbon);
+}
+
+section.media-grid a > p,
+section.media-grid div > p {
+	font-size: 1.25rem;
+	font-weight: 900;	
+	line-height: 1.2;
+	position: absolute;
+	bottom: -0.25rem;
+	color: white;
+	opacity: 0;
+	margin: 0;
+	padding: 1.5rem;
+	transition: all 0.2s ease;
+	-webkit-backface-visibility: hidden;
+}
+
+section.media-grid div > p {
+	cursor: default;
+}
+
+section.media-grid a > p span,
+section.media-grid div > p span {
+	color: var(--accent);
+}
+
+section.media-grid a > img,
+section.media-grid div > img {
+	transition: all 0.2s ease;
+	-webkit-backface-visibility: hidden;
+}
+
+section.media-grid a:hover > img,
+section.media-grid div:hover > img {
+	opacity: 0.1;
+}
+
+section.media-grid a:hover > p,
+section.media-grid div:hover > p {
+	opacity: 1;
+	bottom: 0;
+}
+
+
+
+
+/*----------------------------------------*/
+/*---------------- ASIDES ----------------*/
+/*----------------------------------------*/
+
+
+aside {
+	clear: both;
+}
+
+aside > *:first-child {
+	margin-top: 0 !important;
+}
+
+aside > *:last-child {
+	margin-bottom: 0 !important;
+}
+
+aside.right {
+	float: right;
+	margin: 0.25rem 0 1rem 1.5rem;
+}
+
+aside.left {
+	float: left;
+	margin: 0.25rem 1.5rem 1rem 0;
+}
+
+aside.full {
+	margin: 1.5rem 0;
+}
+
+aside.media-vert {
+	max-width: 300px;
+}
+
+aside.media-horz {
+	max-width: 400px;
+}
+
+
+/* ASIDE - SIDEBAR */
+
+aside.sidebar {
+	background-color: var(--sylvite);
+	padding: 1.5rem;
+	max-width: 300px;
+}
+
+aside.sidebar h3 {
+	font-size: 1.25rem;
+	font-weight: 900;
+	margin-bottom: 0.75rem;
+}
+
+aside.sidebar p {
+	margin-bottom: 0.75rem;
+}
+
+aside.sidebar.full {
+	max-width: none;
+}
+
+aside.sidebar > *:first-child,
+aside.sidebar > * > *:first-child {
+	margin-top: 0 !important;
+}
+
+aside.sidebar > *:last-child,
+aside.sidebar > * > *:last-child {
+	margin-bottom: 0 !important;
+}
+
+
+/* ASIDE - QUOTE */
+
+aside.quote {
+	background-color: var(--sylvite);
+	padding: 1.5rem;
+	max-width: 400px;
+	position: relative;
+}
+
+aside.quote p {
+	font-size: 1.25rem;
+	font-weight: 900;	
+	text-align: center;
+}
+
+aside.quote p.caption,
+aside.quote.small-font p.caption {
+	font-size: 0.75rem;
+	font-weight: 400;
+}
+
+aside.quote.full {
+	padding: 1.5rem 5rem;
+	max-width: none;
+}
+
+aside.quote.full::before {
+	content: open-quote;
+	font-size: 8rem;
+	color: rgba(0,0,0,0.1);
+	position: absolute;
+	top: -1.5rem;
+	left: 1rem;
+}
+
+aside.quote.full::after {
+	content: close-quote;
+	font-size: 8rem;
+	color: rgba(0,0,0,0.1);
+	position: absolute;
+	top: -1.5rem;
+	right: 1rem;
+}
+
+aside.quote.small-font p {
+	font-size: 1.125rem;
+}
+
+
+
+
+/*----------------------------------------*/
+/*---------------- FOOTER ----------------*/
+/*----------------------------------------*/
+
+
+footer {
+	padding: var(--padding);
+}
+
+
+
+
+/*----------------------------------------*/
+/*-------------- INTERACTIVE -------------*/
+/*----------------------------------------*/
+
+
+/* LINKS */
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
+
+a.link {
+	font-weight: 700;
+	color: var(--ferrite);
+	border-bottom: 2px solid var(--accent);
+}
+
+a.link:visited {
+	color: var(--corundum);
+	border-color: var(--corundum);
+}
+
+a.link:hover {
+	color: var(--accent);
+	border-color: transparent;
+}
+
+
+/* TEXT BUTTONS */
+
+a.button {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0.5rem 0.25rem 1.5rem 0;
+	padding: 0.75rem 1.25rem 0.9rem;
+	background: var(--sylvite);
+	font-weight: 700;
+	line-height: 1;
+	color: var(--ferrite);
+	border: 1px solid var(--gypsum);
+	border-bottom: 3px solid var(--mica);
+	border-radius: 0.3rem;
+}
+
+a.button:hover {
+	background: var(--accentLight);
+	border-color: var(--accentLight);
+	border-bottom-color: var(--accent);
+}
+
+
+/* ICON BUTTONS */
+
+aside.icon-button {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: stretch;
+	max-width: 240px;
+	background-color: var(--sylvite);
+	transition: all 0.2s ease;
+}
+
+aside.icon-button a {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	flex-grow: 1;
+}
+
+aside.icon-button a > *:last-child {
+	margin-bottom: 0;
+}
+
+aside.icon-button img {
+	padding: 0 1rem;
+}
+
+aside.icon-button p {
+	flex-grow: 1;
+	font-weight: 700;
+	line-height: 1.2;
+	color: var(--ferrite);
+	padding: 0.5rem 1rem 0.5rem 0;
+	transition: all 0.2s ease;
+}
+
+aside.icon-button:hover {
+	background-color: var(--accentLight)
+}
+
+aside.icon-button.full {
+	height: 60px;
+	max-width: none;
+	margin: 0.5rem 0;
+}
+
+*:not(.icon-button) + aside.icon-button.full {
+	margin-top: 1.5rem;
+}
+
+aside.icon-button.full + *:not(.icon-button) {
+	margin-top: 1.5rem;
+}
+
+div.icon-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	margin: 1.5rem 0;
+}
+
+div.icon-grid aside {
+	height: 60px;
+	max-width: none;
+	margin: 0 0.5rem 0.5rem 0;
+}
+
+
+/* ICON BUTTON EXPAND */
+
+aside.icon-button.expand {
+	display: block;
+	overflow: hidden;
+	position: relative;
+	height: auto;
+	max-height: 60px;
+	min-height: 60px;
+	transition: max-height 0.3s ease;
+}
+
+aside.icon-button.expand a {
+	position: absolute;
+	width: 100%;
+	height: 60px;
+	top: 0;
+	background-color: var(--sylvite);
+	transition: top 0.3s ease, background-color 0.2s ease;
+}
+
+aside.icon-button.expand.is-active a {
+	top: -60px;
+}
+
+aside.icon-button.expand video,
+aside.icon-button.expand .embed {
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+aside.icon-button.expand.is-active video,
+aside.icon-button.expand.is-active .embed{
+	pointer-events: auto;
+	opacity: 1;
+}
+
+aside.icon-button.expand a:hover {
+	background-color: var(--accentLight)
+}
+
+aside.icon-button.expand-spoiler {
+	margin: 0.5rem 0 0
+}
+
+aside.icon-button.expand-spoiler.is-active {
+	background-color: var(--accentLight);
+}
+
+aside.icon-button.expand-spoiler a{
+	position: relative;
+	padding: 0 3rem 0 0;
+}
+
+aside.icon-button.expand-spoiler a::before,
+aside.icon-button.expand-spoiler a::after{
+	/*Creates the line of the (+) or (-) */
+	content: "";
+	display: block;
+	height: 25px;
+	width: 3px;
+	background: var(--accent);
+	position: absolute;
+	right: 1.5rem;
+	top: auto;
+	transition: transform 0.3s ease-out, opacity 0.2s ease;
+	z-index: 1;
+	opacity: 0;
+}
+
+aside.icon-button.expand-spoiler a::before{
+	transform: rotate(90deg);
+}
+
+aside.icon-button.expand-spoiler.is-active a::after{
+	transform: rotate(-90deg);
+}
+
+aside.icon-button.expand-spoiler:hover a::before,
+aside.icon-button.expand-spoiler:hover a::after,
+aside.icon-button.expand-spoiler.is-active a::before,
+aside.icon-button.expand-spoiler.is-active a::after{
+	height: 27px;
+	opacity: 1;
+}
+
+.icon-spoiler{
+	max-height: 0;
+	overflow: hidden;
+	margin: 0 0 0.5rem;
+	transition: max-height 0.3s ease-out;
+	position: relative;
+}
+
+.icon-spoiler div{
+	padding: 1.5rem;
+	background-color: var(--sylvite);
+}
+
+.icon-spoiler div > *:first-child {
+	margin-top: 0 !important;
+}
+
+aside.icon-button.expand-spoiler + .icon-spoiler {
+	margin-top: auto;
+}
+
+.icon-spoiler + aside.icon-button.full {
+	margin-top: auto;
+}
+.icon-spoiler div > *:last-child{
+	margin-bottom: 0 !important;
+}
+
+
+/*----------------------------------------*/
+/*---------------- TABLES ----------------*/
+/*----------------------------------------*/
+
+
+/* TABLE - DEFAULT */
+
+table {
+	width: 100%;
+	margin: 1.5rem auto; 
+	border-collapse: collapse;
+	border-spacing: 0;	
+}
+
+table th {
+	font-weight: 700;
+	color: white;
+	text-align: left;
+	vertical-align: middle;
+	padding: 0.75rem;
+	background-color: var(--tableHeaderBkg);
+	border: 1px solid var(--tableHeaderBrd);
+	border-bottom: 4px solid var(--accent);
+}
+
+table th.horz {
+	border-right: 4px solid var(--accent);
+	border-bottom: 1px solid var(--tableHeaderBrd);
+}
+
+table th.sub01 {
+	color: white;
+	background-color: var(--tableSubheaderBkg);
+	border: 1px solid var(--tableSubheaderBrd);
+}
+
+table th.sub02 {
+	color: white;
+	background-color: var(--tableSubheader2Bkg);
+	border: 1px solid var(--tableSubheader2Brd);
+}
+
+table tr {
+	border-top: 1px solid var(--tableBodyBrd);
+	border-bottom: 1px solid var(--tableBodyBrd);
+}
+
+table tr:first-child {
+	border-top: 0;
+}
+
+table.alternating-row tr:nth-child(even) td { 
+	background: var(--tableBody2Bkg);
+}
+
+table.alternating-row tr:nth-child(odd) td {
+	background: var(--tableBodyBkg);
+}
+
+table.alternating-col tr td:nth-child(even) { 
+	background: var(--tableBody2Bkg);
+}
+
+table.alternating-col tr td:nth-child(odd) {
+	background: var(--tableBodyBkg);
+}
+
+table td {
+	line-height: 1.3rem;
+	text-align: left;
+	vertical-align: top;
+	padding: 0.75rem;
+	border: 1px solid var(--tableBodyBrd);
+	background: var(--tableBodyBkg);
+}
+
+td > *:first-child, td > *:first-child > *:first-child {
+	margin-top: 0rem !important;
+}
+
+td > *:last-child, td > *:last-child > *:last-child {
+	margin-bottom: 0rem !important;
+}
+
+td .icon {
+	margin: 0 0 1.0rem;
+}
+
+th.text-center, td.text-center {
+	text-align: center;
+}
+
+th.text-right, td.text-right {
+	text-align: right;
+}
+
+
+
+/*----------------------------------------*/
+/*----------------- MISC -----------------*/
+/*----------------------------------------*/
+
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+img.inline {
+	display: inline;
+	vertical-align: middle;
+}
+
+video {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.embed {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+}
+
+.embed iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+	audio {
+	max-height: 40px;
+	}
+}
+
+hr {
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--corundum);
+}
+
+.shadow {
+	box-shadow: 0 0 1rem var(--mica);
+}
+
+.glossary {
+	background: var(--accentLight);
+	padding: 0 3px;
+}
+
+.mathFont {
+	font-family: "Times New Roman";
+	font-style: italic;
+}
+
+
+
+/*----------------------------------------*/
+/*-------------- RESPONSIVE --------------*/
+/*----------------------------------------*/
+
+@media only screen
+	and (max-width: 800px) {
+		aside.right,
+		aside.left {
+			float: none;
+			margin: 1.5rem 0;
+		}
+		section.col-split.x2 div,
+		section.col-split.x3 div {
+			max-width: none;
+		}
+}
+
+
+@media only screen 
+	and (max-width: 1024px) {
+		body {
+			padding: calc(var(--padding) / 2);
+		}
+}

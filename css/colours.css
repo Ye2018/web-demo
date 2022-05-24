@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------*/
+/*---------------- COLOURS ---------------*/
+/*----------------------------------------*/
+
+:root {
+	/* Accent colour */
+	--accent: #78BDFF;
+	--accentLight: #D7EBFF;
+	
+	/* Brightspace gray palette (2019-07 Update) */
+	--carbon: #343637;
+	--carbonRGB: 52, 54, 55;
+	--ferrite: #494c4e;
+	--ferriteRGB: 73, 76, 78;
+	--tungsten: #6e7376;
+	--galena: #868c8f;
+	--corundum: #b5bdc2;
+	--mica: #cdd5dc;
+	--gypsum: #E6EAF0;
+	--sylvite: #F2F3F5;
+	--regolith: #F9FAFB;
+	
+	/* Brightspace blue-gray palette (2019-07 Update) */
+	--carbon: #32363c;
+	--carbonRGB: 50, 54, 60;
+	--ferrite: #3e434b;
+	--ferriteRGB: 62, 67, 75;
+	--tungsten: #5D6570;
+	--galena: #7C8695;
+	--corundum: #B9C2D0;
+	--mica: #D3D9E3;
+	--gypsum: #E6EAF0;
+	--sylvite: #F2F3F5;
+	--regolith: #F9FAFB;
+	
+	/* Table colours */
+	--tableHeaderBkg: var(--ferrite);
+	--tableHeaderBrd: var(--carbon);
+	--tableSubheaderBkg: var(--tungsten);
+	--tableSubheaderBrd: var(--ferrite); 
+	--tableSubheader2Bkg: var(--galena); 
+	--tableSubheader2Brd: var(--tungsten);
+	--tableBodyBrd: var(--mica);
+	--tableBodyBkg: var(--regolith);
+	--tableBody2Bkg: var(--sylvite);
+	
+	/* Feedback colours */
+	--green: #46A661;
+	--red: #D74D51;
+	--blue: #29A6FF;
+	--yellow: #FFBA59;
+}

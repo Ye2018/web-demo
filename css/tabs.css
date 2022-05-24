@@ -1,0 +1,217 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*----------------------------------------*/
+/*----------- TABS - HORIZONTAL ----------*/
+/*----------------------------------------*/
+
+
+/* SECTION */
+
+section.tabs {
+	margin: 0 auto;
+	padding: 3rem 0 0;
+}
+
+
+/* NAV */
+
+section.tabs nav {
+	margin: 0 0 2rem;
+}
+
+section.tabs nav ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: flex-end;
+}
+
+section.tabs nav ul li {
+	color: var(--corundum);
+	font-weight: 700;
+	cursor: pointer;
+	user-select: none;
+	margin: 0 1rem 0 0;
+	padding: 0.3rem 0 0;
+	line-height: 1.2;
+	transition: padding 0.2s ease-out, color 0.2s ease-out;
+}
+
+section.tabs nav ul li:hover {
+	color: var(--tungsten);
+	
+}
+
+
+/* GRID LAYOUT */
+
+section.tabs.grid nav ul {
+	flex-flow: row wrap;
+}
+
+section.tabs.grid nav ul li {
+	margin: 0 1rem 1rem 0;
+	border-bottom: 3px solid;
+	padding: 0 0 0.3rem;
+}
+
+
+/* CONTENT */
+
+section.tabs:not(.vertical) + section::before {
+	content: "";
+	display: block;
+	height: 3rem;
+	border-top: 2px solid var(--sylvite);
+}
+
+section.tabs .content::after {
+	/* Clearfix */
+	content: "";
+	display: table;
+	clear: both;
+}
+
+section.tabs .content > div {
+	display: none;
+	animation-name: content;
+	animation-direction: normal;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+}
+
+@keyframes content {
+	from {
+		opacity: 0;
+		transform: translateY(0.25rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0%);
+	}	
+}
+
+section.tabs .content div > *:first-child {
+	margin-top: 0;
+}
+
+section.tabs .content div > *:last-child {
+	margin-bottom: 0;
+}
+
+
+/* STATES */
+
+section.tabs .content > div.is-visible {
+	display: block;
+}
+
+section.tabs nav ul li.is-active {
+	color: var(--accent);
+	border-bottom: 3px solid var(--accent);
+	padding: 0 0 0.3rem;
+}
+
+
+/* MISC */
+
+.nbsp {
+	white-space: nowrap;
+}
+
+
+/* RESPONSIVE */
+
+@media only screen 
+	and (max-width: 1169px) {
+		
+		section.tabs:not(.vertical) nav ul {
+			flex-flow: row wrap;
+		}
+		
+		section.tabs:not(.vertical) nav ul li {
+			margin: 0 1rem 1rem 0;
+			border-bottom: 3px solid;
+			padding: 0 0 0.3rem;
+		}
+		
+}
+
+
+
+
+/*----------------------------------------*/
+/*------------ TABS - VERTICAL -----------*/
+/*----------------------------------------*/
+
+
+@media only screen
+	and (max-width: 800px){
+		
+		section.tabs.vertical nav ul {
+			flex-flow: row wrap;
+		}
+
+		section.tabs.vertical nav ul li {
+			margin: 0 1rem 1rem 0;
+			border-bottom: 3px solid;
+			padding: 0 0 0.3rem;
+		}
+		
+}
+
+
+/* Vertical Layout will only display with a min-width of 800px */
+
+@media only screen
+	and (min-width: 800px) {
+
+		/* SECTION */
+
+		section.tabs.vertical {
+			display: flex;
+			flex-flow: row nowrap;
+			padding: 3rem 0 0;
+		}
+
+		/* NAV */
+
+		section.tabs.vertical nav {
+			display: flex;
+			flex-flow: column nowrap;
+			flex-shrink: 0;
+			width: 30%;
+			margin: 0 3rem 0 0;
+		}
+
+		section.tabs.vertical nav ul {
+			flex-flow: column nowrap;
+		}
+
+		section.tabs.vertical nav ul li {
+			margin: 0 0 1rem;
+			text-align: right;
+			padding: 0 0 0 0.75rem;
+			border-left: 3px solid transparent;
+		}
+
+		section.tabs.vertical nav ul > *:last-child {
+			margin-bottom: 0;
+		}
+
+		/* STATES */
+
+		section.tabs.vertical nav ul li.is-active {
+			border-bottom: none;
+			border-left: none;
+			border-right: 3px solid var(--accent);
+			padding: 0 0.75rem 0 0;
+		}		
+		
+}
